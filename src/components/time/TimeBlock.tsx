@@ -23,7 +23,6 @@ export const TimeBlock: React.FC = () => {
       setCurrentLesson(whatLesson(newTime));
     };
 
-    // Update immediately and then every second
     updateTime();
     const interval = setInterval(updateTime, 1000);
 

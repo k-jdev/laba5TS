@@ -14,7 +14,7 @@ const App: React.FC = () => {
         </h1>
 
         <div className="mb-6">
-          <div className="flex gap-2 mb-2">
+          <div className="flex gap-4 mb-2">
             <button
               className={`px-4 py-2 rounded-t-lg font-medium transition-colors ${
                 activeTab === "time"

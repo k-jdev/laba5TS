@@ -62,43 +62,45 @@ export const TimeForm: React.FC = () => {
           <option value="toSeconds">Конвертувати в секунди</option>
           <option value="fromSeconds">Секунди в час</option>
           <option value="addSeconds">Додати секунди</option>
-          <option value="difference">Різниця між часами</option>
+          <option value="difference">Різниця між годинами</option>
           <option value="whatLesson">Яка зараз пара</option>
         </select>
       </div>
 
-      <div className="mb-4">
-        <label className="block mb-2">Час:</label>
-        <div className="flex gap-2">
-          <input
-            type="number"
-            placeholder="Години"
-            className="p-2 border rounded w-1/3"
-            value={time.hour}
-            onChange={(e) =>
-              setTime({ ...time, hour: parseInt(e.target.value) || 0 })
-            }
-          />
-          <input
-            type="number"
-            placeholder="Хвилини"
-            className="p-2 border rounded w-1/3"
-            value={time.min}
-            onChange={(e) =>
-              setTime({ ...time, min: parseInt(e.target.value) || 0 })
-            }
-          />
-          <input
-            type="number"
-            placeholder="Секунди"
-            className="p-2 border rounded w-1/3"
-            value={time.sec}
-            onChange={(e) =>
-              setTime({ ...time, sec: parseInt(e.target.value) || 0 })
-            }
-          />
+      {operation !== "fromSeconds" && (
+        <div className="mb-4">
+          <label className="block mb-2">Час:</label>
+          <div className="flex gap-2">
+            <input
+              type="number"
+              placeholder="Години"
+              className="p-2 border rounded w-1/3"
+              value={time.hour}
+              onChange={(e) =>
+                setTime({ ...time, hour: parseInt(e.target.value) || 0 })
+              }
+            />
+            <input
+              type="number"
+              placeholder="Хвилини"
+              className="p-2 border rounded w-1/3"
+              value={time.min}
+              onChange={(e) =>
+                setTime({ ...time, min: parseInt(e.target.value) || 0 })
+              }
+            />
+            <input
+              type="number"
+              placeholder="Секунди"
+              className="p-2 border rounded w-1/3"
+              value={time.sec}
+              onChange={(e) =>
+                setTime({ ...time, sec: parseInt(e.target.value) || 0 })
+              }
+            />
+          </div>
         </div>
-      </div>
+      )}
 
       {operation === "difference" && (
         <div className="mb-4">
