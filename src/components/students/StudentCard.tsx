@@ -65,7 +65,7 @@ export const StudentCard: React.FC<StudentCardProps> = ({ student }) => {
               student.informaticsGrade
             )}`}
           >
-            Інф: {student.informaticsGrade}
+            Інформатика: {student.informaticsGrade}
           </span>
         </div>
         <p className="mt-2 font-semibold">
